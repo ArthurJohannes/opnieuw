@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blood profiling using GEO datasets</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Blood profiling using GEO datasets">
+  <meta name="author" content="Arthur J. Molendijk">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="libraries/widgets/nvd3/css/nv.d3.css"></link>
+<link rel=stylesheet href="libraries/widgets/nvd3/css/rNVD3.css"></link>
+<link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  <script src="libraries/widgets/nvd3/js/jquery-1.8.2.min.js"></script>
+<script src="libraries/widgets/nvd3/js/d3.v3.min.js"></script>
+<script src="libraries/widgets/nvd3/js/nv.d3.min-new.js"></script>
+<script src="libraries/widgets/nvd3/js/fisheye.js"></script>
+
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Blood profiling using GEO datasets</h1>
+    <h2>a visualisation App</h2>
+    <p>Arthur J. Molendijk<br/>Vlissingen NL</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>The opportunity</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Many blood gene expression datasets are publicly available in the GEO (gene expression omnibus) datasets collection.</p></li>
+<li><p>These datasets have been mainly analysed in isolation for specific experimental questions.</p></li>
+<li><p>It would be nice to compare these experimental data systematically for a better overview.</p></li>
+<li><p>Gene expression data might become medically
+relevant blood tests.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Basic features for profiling</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>GEO profiles already offers many options to study the datasets. </p></li>
+<li><p>Datasets typically contain expression tables with different patient samples  (10 - ~ 200) as variables and 10,000 - 20,000 observations for different genes.  </p></li>
+<li><p>New features were derived by grouping co-expressed genes in clusters, by determining correlation patterns in many datasets. </p></li>
+<li><p>Gene clusters can then be used as new features, and mostly correspond with the different blood cell types or different things such as inflammation.   </p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>visualisation and analysis</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>Good graphics can help to recognize common themes in the data, thus using ggplot2 package.</p></li>
+<li><p>A Shiny (Rstudio) App allows fast and easy comparisons between many pre-processed datasets, looking at the different features by using widgets. </p></li>
+<li><p>The main outputs are</p></li>
+<li><p>A) a plot showing blood profiles for celltypes, etc, which can be ordered by value.</p></li>
+<li><p>B) a cluster analysis for the selected dataset using the pheatmap package in R.</p></li>
+<li><p>C) a datatable to check the experimental annotation for the different sample numbers.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>An example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In this particular subsetted example features can be seen to correlate.</p>
+
+<p><img src="assets/fig/unnamed-chunk-1-1.png" alt="plot of chunk unnamed-chunk-1"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>With the bloodVis App it is possible to systematically compare different datasets with uniform features and analysis.</p></li>
+<li><p>App can be adapted to increase the number of datasets from 8 to more. Also, new (sub)features can be added etc.</p></li>
+<li><p>Public datasets such as GEO datasets can be harvested for new analysis.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='The opportunity'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Basic features for profiling'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='visualisation and analysis'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='An example'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='conclusion'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
